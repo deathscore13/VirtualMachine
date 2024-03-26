@@ -184,6 +184,9 @@ class VirtualMachine
     }
 }
 
+if (is_dir(__DIR__.'/run'))
+    mkdir(__DIR__.'/run', 0777);
+
 spl_autoload_register(function (string $class): void
 {
     if (substr($class, 0, 2) === 'VM')
