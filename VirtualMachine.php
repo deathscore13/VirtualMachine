@@ -178,7 +178,9 @@ class VirtualMachine
      */
     private function _rmenv()
     {
-        unlink(__DIR__.'/env/'.$this->status()['pid']);
+        $file = __DIR__.'/env/'.$this->status()['pid'];
+        if (file_exists($file))
+            unlink($file);
     }
 }
 
