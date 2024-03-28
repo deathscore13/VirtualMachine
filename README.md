@@ -47,7 +47,9 @@ require('VirtualMachine/VirtualMachine.php');
 // подключение утилиты для пропуска мусора из вывода
 require('VirtualMachine/TrashSkip.php');
 
-// запуск test.php (не советую использовать PHP_BINARY, поскольку процесс может запускаться через php-fpm, который некорректно работает в CLI режиме)
+// запуск test.php
+// не советую использовать PHP_BINARY, поскольку процесс может запускаться
+// через php-fpm, который некорректно работает в CLI режиме
 $test = new VitrualMachine('stderr', PHP_BINARY.' test.php');
 
 // пропуск мусора из вывода
